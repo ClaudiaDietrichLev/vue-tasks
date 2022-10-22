@@ -29,12 +29,14 @@
         <table>
           <thead>
             <tr>
-              <th v-for="item in Object.keys(books[0])">{{item}}</th>
+              <th v-for="item in Object.keys(books[0])" :key="item">
+                {{item}}
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="book of books">
-              <td v-for="detail of book">{{ detail }}</td>
+            <tr v-for="book of books" :key="book">
+              <td v-for="detail of book" :key="detail">{{ detail }}</td>
             </tr>
           </tbody>
         </table>
